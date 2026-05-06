@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カート画面 プレビュー</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Segoe UI', 'Hiragino Sans', sans-serif; background: #f9fafb; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <a href="../top/top.html" class="text-xl font-bold text-green-700 shrink-0">🛍 EC Store</a>
+    <div class="flex-1 max-w-xl">
+      <div class="relative">
+        <input type="text" placeholder="商品を検索..." class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+        <span class="absolute right-3 top-2.5 text-gray-400">🔍</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 shrink-0">
+      <a href="../かご/cart.html" class="relative text-gray-600 hover:text-green-700 text-xl">
+        🛒
+        <span class="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">3</span>
+      </a>
+      <div class="relative dropdown">
+        <button class="flex items-center gap-1 text-sm text-gray-700 hover:text-green-700 font-medium">
+          👤 田中太郎 <span class="text-xs">▼</span>
+        </button>
+        <div class="dropdown-menu absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
+          <a href="../購入履歴/order_history.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">📋 注文履歴</a>
+          <hr class="my-1">
+          <a href="../top/top.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">🚪 ログアウト</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">ショッピングカート <span class="text-gray-500 text-lg font-normal">(3件)</span></h1>
+
+  <!-- SfListItem相当: カート商品リスト -->
+  <div class="bg-white rounded-xl shadow-sm divide-y">
+    <div class="p-4 flex items-center gap-4">
+      <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center text-4xl shrink-0">👕</div>
+      <div class="flex-1 min-w-0">
+        <p class="font-medium text-gray-800">プレミアムコットンTシャツ</p>
+        <p class="text-sm text-gray-500 mt-1">¥2,480</p>
+      </div>
+      <!-- SfButton: 数量変更 -->
+      <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden shrink-0">
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 font-bold">−</button>
+        <span class="w-10 h-8 flex items-center justify-center border-x border-gray-300 text-sm">2</span>
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 font-bold">+</button>
+      </div>
+      <p class="font-bold text-gray-800 w-20 text-right shrink-0">¥4,960</p>
+      <!-- SfButton + SfIconDelete -->
+      <button class="text-red-400 hover:text-red-600 shrink-0 text-lg" title="削除">🗑</button>
+    </div>
+
+    <div class="p-4 flex items-center gap-4">
+      <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center text-4xl shrink-0">👟</div>
+      <div class="flex-1 min-w-0">
+        <p class="font-medium text-gray-800">ランニングシューズ</p>
+        <p class="text-sm text-gray-500 mt-1">¥6,800</p>
+      </div>
+      <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden shrink-0">
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 font-bold">−</button>
+        <span class="w-10 h-8 flex items-center justify-center border-x border-gray-300 text-sm">1</span>
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 font-bold">+</button>
+      </div>
+      <p class="font-bold text-gray-800 w-20 text-right shrink-0">¥6,800</p>
+      <button class="text-red-400 hover:text-red-600 shrink-0 text-lg" title="削除">🗑</button>
+    </div>
+
+    <div class="p-4 flex items-center gap-4">
+      <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center text-4xl shrink-0">🧢</div>
+      <div class="flex-1 min-w-0">
+        <p class="font-medium text-gray-800">UVカットキャップ</p>
+        <p class="text-sm text-gray-500 mt-1">¥1,980</p>
+      </div>
+      <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden shrink-0">
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 font-bold">−</button>
+        <span class="w-10 h-8 flex items-center justify-center border-x border-gray-300 text-sm">1</span>
+        <button class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 font-bold">+</button>
+      </div>
+      <p class="font-bold text-gray-800 w-20 text-right shrink-0">¥1,980</p>
+      <button class="text-red-400 hover:text-red-600 shrink-0 text-lg" title="削除">🗑</button>
+    </div>
+  </div>
+
+  <!-- 合計・SfButton: 注文ボタン -->
+  <div class="mt-6 bg-white rounded-xl shadow-sm p-6">
+    <div class="flex justify-between items-center text-lg">
+      <span class="font-medium text-gray-700">合計（税込）</span>
+      <span class="text-2xl font-bold text-green-700">¥13,740</span>
+    </div>
+    <a href="../購入確認/checkout.html" class="mt-4 block w-full bg-green-600 text-white font-semibold py-3 rounded-lg hover:bg-green-700 transition text-center text-lg">
+      注文手続きへ進む →
+    </a>
+  </div>
+
+  <!-- カート空の場合 -->
+  <div class="mt-12 border-t-2 border-dashed border-gray-300 pt-8">
+    <p class="text-center text-sm text-gray-400 mb-4">▼ カートが空の場合の表示</p>
+    <div class="bg-white rounded-xl shadow-sm p-12 text-center">
+      <p class="text-6xl mb-4">🛒</p>
+      <p class="text-gray-500 text-lg">カートに商品がありません</p>
+      <a href="../top/top.html" class="mt-4 inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">お買い物を続ける →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-gray-800 text-gray-400 text-center py-6 text-sm mt-8">
+  © 2025 EC Store Portfolio. All rights reserved.
+</footer>
+
+</body>
+</html>

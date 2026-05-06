@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注文履歴画面 プレビュー</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Segoe UI', 'Hiragino Sans', sans-serif; background: #f9fafb; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .accordion-content.open { max-height: 200px; }
+    .accordion-arrow { transition: transform 0.3s ease; }
+    .accordion-arrow.open { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <a href="../top/top.html" class="text-xl font-bold text-green-700 shrink-0">🛍 EC Store</a>
+    <div class="flex-1 max-w-xl">
+      <div class="relative">
+        <input type="text" placeholder="商品を検索..." class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+        <span class="absolute right-3 top-2.5 text-gray-400">🔍</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 shrink-0">
+      <a href="../かご/cart.html" class="relative text-gray-600 hover:text-green-700 text-xl">🛒</a>
+      <div class="relative dropdown">
+        <button class="flex items-center gap-1 text-sm text-gray-700 hover:text-green-700 font-medium">
+          👤 田中太郎 <span class="text-xs">▼</span>
+        </button>
+        <div class="dropdown-menu absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
+          <a href="../購入履歴/order_history.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">📋 注文履歴</a>
+          <hr class="my-1">
+          <a href="../top/top.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">🚪 ログアウト</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">注文履歴</h1>
+
+  <div class="space-y-4">
+    <!-- Headless UI Disclosure: 注文1（展開状態） -->
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+      <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          <div class="text-left">
+            <p class="font-medium text-gray-800">ORD-20250101-001</p>
+            <p class="text-sm text-gray-500">2025/01/01</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <!-- SfChip: ステータス -->
+          <span class="bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full">配送済み</span>
+          <span class="font-bold text-gray-800">¥13,740</span>
+          <span class="accordion-arrow open text-gray-400">▼</span>
+        </div>
+      </button>
+      <div class="accordion-content open border-t bg-gray-50 px-6 py-4">
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">👕 プレミアムコットンTシャツ × 2</span>
+            <span class="text-gray-800">¥4,960</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">👟 ランニングシューズ × 1</span>
+            <span class="text-gray-800">¥6,800</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">🧢 UVカットキャップ × 1</span>
+            <span class="text-gray-800">¥1,980</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Headless UI Disclosure: 注文2（折畳状態） -->
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+      <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          <div class="text-left">
+            <p class="font-medium text-gray-800">ORD-20241225-003</p>
+            <p class="text-sm text-gray-500">2024/12/25</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full">配送済み</span>
+          <span class="font-bold text-gray-800">¥1,980</span>
+          <span class="accordion-arrow text-gray-400">▼</span>
+        </div>
+      </button>
+      <div class="accordion-content border-t bg-gray-50 px-6 py-4">
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">🧴 オーガニックハンドクリーム × 2</span>
+            <span class="text-gray-800">¥1,960</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Headless UI Disclosure: 注文3（折畳・処理中ステータス） -->
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+      <button onclick="toggleAccordion(this)" class="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          <div class="text-left">
+            <p class="font-medium text-gray-800">ORD-20241220-005</p>
+            <p class="text-sm text-gray-500">2024/12/20</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <!-- SfChip: 処理中ステータス（青） -->
+          <span class="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">処理中</span>
+          <span class="font-bold text-gray-800">¥8,760</span>
+          <span class="accordion-arrow text-gray-400">▼</span>
+        </div>
+      </button>
+      <div class="accordion-content border-t bg-gray-50 px-6 py-4">
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">👖 ストレッチデニムパンツ × 1</span>
+            <span class="text-gray-800">¥4,980</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">🎒 多機能バックパック × 1</span>
+            <span class="text-gray-800">¥3,780</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注文がない場合 -->
+  <div class="mt-12 border-t-2 border-dashed border-gray-300 pt-8">
+    <p class="text-center text-sm text-gray-400 mb-4">▼ 注文がない場合の表示</p>
+    <div class="bg-white rounded-xl shadow-sm p-12 text-center">
+      <p class="text-6xl mb-4">📋</p>
+      <p class="text-gray-500 text-lg">注文履歴がありません</p>
+      <a href="../top/top.html" class="mt-4 inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">お買い物をはじめる →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-gray-800 text-gray-400 text-center py-6 text-sm mt-8">
+  © 2025 EC Store Portfolio. All rights reserved.
+</footer>
+
+<script>
+function toggleAccordion(btn) {
+  const content = btn.nextElementSibling;
+  const arrow = btn.querySelector('.accordion-arrow');
+  content.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EC Store - 画面プレビュー一覧</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Segoe UI', 'Hiragino Sans', sans-serif; background: #f9fafb; }
+  </style>
+</head>
+<body>
+
+<main class="max-w-2xl mx-auto px-4 py-12">
+  <h1 class="text-3xl font-bold text-gray-900 mb-2">EC Store 画面プレビュー</h1>
+  <p class="text-gray-500 mb-8">各画面のモックをブラウザで確認できます。リンクをクリックしてください。</p>
+
+  <div class="space-y-3">
+    <a href="top/top.html" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition flex items-center justify-between">
+      <div>
+        <p class="font-bold text-gray-800">1. TOP画面</p>
+        <p class="text-sm text-gray-500 mt-1">ヒーローバナー、おすすめ商品、新着商品</p>
+      </div>
+      <span class="text-gray-400">→</span>
+    </a>
+    <a href="商品詳細/product_detail.html" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition flex items-center justify-between">
+      <div>
+        <p class="font-bold text-gray-800">2. 商品詳細画面</p>
+        <p class="text-sm text-gray-500 mt-1">商品画像、価格、数量選択、カート追加</p>
+      </div>
+      <span class="text-gray-400">→</span>
+    </a>
+    <a href="かご/cart.html" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition flex items-center justify-between">
+      <div>
+        <p class="font-bold text-gray-800">3. カート画面</p>
+        <p class="text-sm text-gray-500 mt-1">商品一覧、数量変更、削除、合計表示</p>
+      </div>
+      <span class="text-gray-400">→</span>
+    </a>
+    <a href="購入確認/checkout.html" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition flex items-center justify-between">
+      <div>
+        <p class="font-bold text-gray-800">4. 注文確定画面</p>
+        <p class="text-sm text-gray-500 mt-1">注文明細確認、注文確定、完了表示</p>
+      </div>
+      <span class="text-gray-400">→</span>
+    </a>
+    <a href="購入履歴/order_history.html" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition flex items-center justify-between">
+      <div>
+        <p class="font-bold text-gray-800">5. 注文履歴画面</p>
+        <p class="text-sm text-gray-500 mt-1">注文一覧、ステータス、明細展開</p>
+      </div>
+      <span class="text-gray-400">→</span>
+    </a>
+    <a href="ログイン/login.html" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition flex items-center justify-between">
+      <div>
+        <p class="font-bold text-gray-800">6. ログイン画面</p>
+        <p class="text-sm text-gray-500 mt-1">メール・パスワード入力、エラー表示、ローディング</p>
+      </div>
+      <span class="text-gray-400">→</span>
+    </a>
+  </div>
+
+  <p class="text-xs text-gray-400 mt-8 text-center">※ Tailwind CSS CDN を使用した静的モックです。実装時は @storefront-ui/react コンポーネントに置き換えます。</p>
+</main>
+
+</body>
+</html>
