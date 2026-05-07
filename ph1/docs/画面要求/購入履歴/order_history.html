@@ -9,8 +9,8 @@
     body { font-family: 'Segoe UI', 'Hiragino Sans', sans-serif; background: #f9fafb; }
     .dropdown-menu { display: none; }
     .dropdown:hover .dropdown-menu { display: block; }
-    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .accordion-content.open { max-height: 200px; }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-top: 0; padding-bottom: 0; }
+    .accordion-content.open { max-height: 300px; padding-top: 1rem; padding-bottom: 1rem; }
     .accordion-arrow { transition: transform 0.3s ease; }
     .accordion-arrow.open { transform: rotate(180deg); }
   </style>
@@ -85,7 +85,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
           </svg>
           <div class="text-left">
-            <p class="font-medium text-gray-800">ORD-20250101-001</p>
+            <p class="font-medium text-gray-800">注文番号: 1001</p>
             <p class="text-sm text-gray-500">2025/01/01</p>
           </div>
         </div>
@@ -93,12 +93,12 @@
           <span class="bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full">配送済み</span>
           <span class="font-bold text-gray-800">¥13,740</span>
           <!-- Heroicons: chevron-down (mini) -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-400 accordion-arrow open">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-400 accordion-arrow">
             <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
           </svg>
         </div>
       </button>
-      <div class="accordion-content open border-t bg-gray-50 px-6 py-4">
+      <div class="accordion-content border-t bg-gray-50 px-6">
         <div class="space-y-2 text-sm">
           <div class="flex justify-between">
             <span class="text-gray-600">プレミアムコットンTシャツ × 2</span>
@@ -124,7 +124,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
           </svg>
           <div class="text-left">
-            <p class="font-medium text-gray-800">ORD-20241225-003</p>
+            <p class="font-medium text-gray-800">注文番号: 1002</p>
             <p class="text-sm text-gray-500">2024/12/25</p>
           </div>
         </div>
@@ -136,7 +136,7 @@
           </svg>
         </div>
       </button>
-      <div class="accordion-content border-t bg-gray-50 px-6 py-4">
+      <div class="accordion-content border-t bg-gray-50 px-6">
         <div class="space-y-2 text-sm">
           <div class="flex justify-between">
             <span class="text-gray-600">オーガニックハンドクリーム × 2</span>
@@ -154,7 +154,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
           </svg>
           <div class="text-left">
-            <p class="font-medium text-gray-800">ORD-20241220-005</p>
+            <p class="font-medium text-gray-800">注文番号: 1003</p>
             <p class="text-sm text-gray-500">2024/12/20</p>
           </div>
         </div>
@@ -166,7 +166,7 @@
           </svg>
         </div>
       </button>
-      <div class="accordion-content border-t bg-gray-50 px-6 py-4">
+      <div class="accordion-content border-t bg-gray-50 px-6">
         <div class="space-y-2 text-sm">
           <div class="flex justify-between">
             <span class="text-gray-600">ストレッチデニムパンツ × 1</span>
